@@ -7,6 +7,10 @@ const app = express();
 
 //app.use(bodyParser);
 
+app.use(express.static(__dirname + '/public/'))
+app.get("/",(req,res)=>{
+    res.sendfile("index.html");
+})
 app.get("/health", (req, res)=>{
     res.send("SERVER IS RUNNING");
 });
